@@ -1353,7 +1353,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 1rem;
 }
 
-/* Hero Section (650-800px Desktop Height Fit) */
+/* Hero Section (Midnight Navy Viewport Fit) */
 .hero-section {
     background: #060d1a;
     background-image: 
@@ -1370,6 +1370,23 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 0.45fr 0.55fr;
     gap: 3.5rem;
     align-items: center;
+    width: 100%;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 10px #38bdf8;
+    display: inline-block;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
 /* Typography Hierarchy */
@@ -1380,6 +1397,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
     margin-bottom: 1.25rem;
     letter-spacing: -1.5px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #38bdf8, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtext {
@@ -1415,6 +1438,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .trust-sub {
@@ -1437,14 +1461,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Right Interactive Dashboard Card (600-700px Wide Desktop) */
 .hero-snapshot-card {
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-lg);
     padding: 2rem;
     color: #ffffff;
     box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
-    min-height: 520px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1544,7 +1568,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 6px 24px rgba(2, 132, 199, 0.65);
 }
 
-/* Single Integrated 3D Globe Visual */
+/* Integrated 3D Globe Visual */
 .globe-visual-container {
     display: flex;
     justify-content: center;
@@ -1778,6 +1802,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dist-seg-lg { transition: all 0.3s ease; }
+.seg-poor { background: #ef4444; }
+.seg-below { background: #f97316; }
+.seg-avg { background: #eab308; color: #000; }
+.seg-above { background: #22c55e; }
+.seg-excellent { background: #10b981; }
 .active-user-seg { outline: 2px solid #ffffff; box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); z-index: 2; }
 
 .global-dist-labels {
@@ -1846,7 +1875,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     color: #ffffff;
     text-decoration: none;
-    transition: all 0.25 ease;
+    transition: all 0.25s ease;
 }
 
 .feature-card-dark-large:hover {
@@ -1864,6 +1893,12 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     font-size: 1.2rem;
 }
+
+.feature-card-icon.violet { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
+.feature-card-icon.green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+.feature-card-icon.amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+.feature-card-icon.blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.feature-card-icon.cyan { background: rgba(6, 182, 212, 0.15); color: #06b6d4; }
 
 .feature-card-title { font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; }
 .feature-card-desc { font-size: 0.8rem; color: #94a3b8; margin-top: 0.3rem; line-height: 1.4; }
@@ -1910,24 +1945,6 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title { font-size: 2.75rem; }
 }
 
-
-/* Form Select Elements */
-.form-select-lg {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--clr-border-light);
-    border-radius: var(--radius-md);
-    font-size: 1rem;
-    font-family: var(--font-body);
-    background-color: #ffffff;
-    transition: all 0.2s ease;
-}
-
-.form-select-lg:focus {
-    outline: none;
-    border-color: var(--clr-primary-accent);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-}
 
 /* ==========================================================================
    DARK FINTECH DASHBOARD SYSTEM (MATCHING REFERENCE UI)
