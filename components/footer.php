@@ -102,5 +102,6 @@ $root = get_root_prefix();
 
 <script src="<?php echo $root; ?>assets/js/main.js"></script>
 <script src="<?php echo $root; ?>assets/js/calculators.js"></script>
+<script src="<?php echo $root; ?>assets/js/snapshot-engine.js"></script>
 </body>
 </html>

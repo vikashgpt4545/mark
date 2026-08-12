@@ -1,30 +1,25 @@
-# FinWise - Core PHP Finance Website Project Task List
+# Interactive Finance Hero & Fintech Platform Upgrade Task List
 
-- [x] Phase 1: Architecture & Global Design System Setup
-  - [x] Create directory structure (`config/`, `includes/`, `components/`, `assets/`, `finance/`, `loans/`, `credit-cards/`, `insurance/`, `calculators/`, `articles/`)
-  - [x] Configure global site configuration, metadata, and dynamic routing helper (`config/config.php`)
-  - [x] Build database helper (`includes/database.php`) & master inventory (`includes/functions.php`)
-  - [x] Implement SEO engine with OpenGraph, Twitter Cards, and JSON-LD schema (`includes/seo.php`)
-  - [x] Create comprehensive financial CSS stylesheet (`assets/css/style.css`)
-  - [x] Create JS engine for interactive calculators and UI (`assets/js/calculators.js`, `assets/js/main.js`)
-  - [x] Develop reusable PHP components (header, footer, breadcrumbs, ad slots, cards, comparison tables, FAQ accordion)
-  - [x] Build comprehensive 3,000-word equivalent Homepage (`index.php`)
+- [ ] Phase 1: Benchmark & Scoring Data Architecture
+  - [ ] Update `schema.sql` with `financial_benchmarks` and `financial_scoring_rules` tables
+  - [ ] Build `includes/benchmarks.php` with country configs (IN, US, UK, CA, AU), currency maps, income/debt ranges, scoring weights, authentic benchmark data sources, and rules engine
 
-- [x] Phase 2: Core Niche Hubs & Detail Pages
-  - [x] Build Finance section hub & 8 detail pages (`/finance/`)
-  - [x] Build Loans section hub & 9 detail pages (`/loans/`)
-  - [x] Build Credit Cards section hub & 9 detail pages (`/credit-cards/`)
-  - [x] Build Insurance section hub & 10 detail pages (`/insurance/`)
+- [ ] Phase 2: Interactive Engines & Frontend Styling
+  - [ ] Enhance `assets/css/style.css` with fintech dashboard components (gauge score, multi-step progress bar, comparison bars, persona cards, projection chart styling)
+  - [ ] Build `assets/js/snapshot-engine.js` with 5 interactive homepage tools:
+    - [ ] Tool 1: "Where Do You Stand Financially?" (Multi-step snapshot tool with currency switching, score calculation, benchmark comparison, next 3 priorities generator)
+    - [ ] Tool 2: "Can You Afford This Loan?" (Interactive DTI & affordability calculator)
+    - [ ] Tool 3: "Are You Financially Protected?" (Coverage risk matrix)
+    - [ ] Tool 4: "What Could Your Money Become?" (Wealth projection + SVG chart)
+    - [ ] Tool 5: "What's Your Financial Type?" (Financial persona quiz engine)
 
-- [x] Phase 3: Interactive Calculators Portal & Educational Guides Hub
-  - [x] Build Calculators directory hub & 9 interactive calculators (`/calculators/`)
-  - [x] Build Articles hub & 10 detailed educational masterclasses (`/articles/`)
+- [ ] Phase 3: Homepage Redesign (`index.php`)
+  - [ ] Build 2-column Fintech Hero ("Know Your Money. Know Your Position. Make Better Decisions.")
+  - [ ] Embed 6-step progressive snapshot tool
+  - [ ] Build visual Financial Snapshot Result Dashboard (Score gauge, 6 Position cards, "How Do You Compare?" bars, Next 3 Priorities, Category links)
+  - [ ] Build Interactive Tools Suite section (Affordability, Protection, Wealth Projection, Persona Quiz)
+  - [ ] Retain & enrich 3,000-word HTML SEO content structure (Finance, Loans, Credit Cards, Insurance, FAQ, CTAs)
 
-- [x] Phase 4: Search Engine, Dynamic Sitemap, Robots & Trust Pages
-  - [x] Implement full site search engine (`search.php`)
-  - [x] Implement dynamic XML sitemap (`sitemap.php`) & `robots.txt`
-  - [x] Build Trust pages (`about.php`, `contact.php`, `privacy-policy.php`, `terms.php`, `disclaimer.php`)
-
-- [x] Phase 5: QA & Final Verification
-  - [x] Database schema creation (`schema.sql`)
-  - [x] Validate cross-linking & navigation integrity across all 46+ files
+- [ ] Phase 4: Quality Assurance & Git Push
+  - [ ] Test multi-step user flow, country switching, scoring accuracy, and tool calculations
+  - [ ] Commit and push changes to `https://github.com/vikashgpt4545/mark`
