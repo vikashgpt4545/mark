@@ -113,6 +113,7 @@ include __DIR__ . '/../components/header.php';
                         <li><a href="../calculators/savings.php">Savings Planner</a></li>
                         <li><a href="../loans/personal-loans.php">Personal Loan Rates</a></li>
                         <li><a href="../credit-cards/credit-score.php">Credit Score Guide</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
