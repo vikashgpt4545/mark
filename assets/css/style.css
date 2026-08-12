@@ -313,11 +313,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
     color: #ffffff;
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 1.25rem;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
 }
 
 .hero-title .gradient-text {
@@ -1391,12 +1391,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Typography Hierarchy */
 .hero-title {
-    font-size: 2.6rem; /* ~42px */
-    line-height: 1.15;
+    font-size: 1.85rem; /* ~30px */
+    line-height: 1.2;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 1.25rem;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
 }
 
 .gradient-text {
@@ -1942,7 +1942,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .niche-grid-large { grid-template-columns: 1fr; }
     .peer-benchmark-cards-grid { grid-template-columns: 1fr; }
-    .hero-title { font-size: 1.75rem; }
+    .hero-title { font-size: 1.45rem; }
 }
 
 
