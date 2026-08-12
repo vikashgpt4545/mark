@@ -26,47 +26,34 @@ $nav = $GLOBALS['main_navigation'] ?? [];
 <body>
 
 <header class="site-header">
-    <div class="container header-inner">
+    <div class="container container-wide header-inner">
         <!-- Logo -->
-        <a href="<?php echo $root; ?>index.php" class="brand-logo" title="FinWise Financial Insights">
+        <a href="<?php echo $root; ?>index.php" class="brand-logo" title="FinWise Financial Intelligence">
             <div class="logo-icon">❖</div>
             <div>Fin<span class="accent">Wise</span></div>
         </a>
 
-        <!-- Desktop Navigation -->
+        <!-- Navigation Links -->
         <nav>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="<?php echo $root; ?>index.php" class="nav-link">Home</a>
-                </li>
-                <?php foreach ($nav as $key => $item): ?>
-                    <li class="nav-item">
-                        <a href="<?php echo $root . ltrim($item['url'], '/'); ?>" class="nav-link">
-                            <?php echo e($item['title']); ?>
-                            <?php if (!empty($item['sub'])): ?>▾<?php endif; ?>
-                        </a>
-                        <?php if (!empty($item['sub'])): ?>
-                            <ul class="dropdown-menu">
-                                <?php foreach ($item['sub'] as $subTitle => $subUrl): ?>
-                                    <li class="dropdown-item">
-                                        <a href="<?php echo $root . ltrim($subUrl, '/'); ?>">
-                                            <?php echo e($subTitle); ?>
-                                        </a>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        <?php endif; ?>
-                    </li>
-                <?php endforeach; ?>
+                <li class="nav-item"><a href="<?php echo $root; ?>finance/index.php" class="nav-link">Finance</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>loans/index.php" class="nav-link">Loans</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>credit-cards/index.php" class="nav-link">Credit Cards</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>insurance/index.php" class="nav-link">Insurance</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>finance/investing-basics.php" class="nav-link">Investing</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>calculators/index.php" class="nav-link">Calculators</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>articles/index.php" class="nav-link">Guides</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>about.php" class="nav-link">About</a></li>
             </ul>
         </nav>
 
-        <!-- Search & Actions -->
+        <!-- Search & Position CTA -->
         <div class="header-actions">
             <form action="<?php echo $root; ?>search.php" method="GET" class="search-form-header">
                 <span class="search-icon">🔍</span>
-                <input type="text" name="q" placeholder="Search guides, tools..." required>
+                <input type="text" name="q" placeholder="Search tools..." required>
             </form>
+            <a href="<?php echo $root; ?>#hero-snapshot-widget" class="btn btn-emerald" style="padding:0.45rem 0.9rem; font-size:0.85rem;">Check Your Position</a>
             <button class="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
         </div>
     </div>

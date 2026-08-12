@@ -1,25 +1,23 @@
-# Interactive Finance Hero & Fintech Platform Upgrade Task List
+# Redesign: Global Financial Intelligence Hero & Dashboard Task List
 
-- [x] Phase 1: Benchmark & Scoring Data Architecture
-  - [x] Update `schema.sql` with `financial_benchmarks` and `financial_scoring_rules` tables
-  - [x] Build `includes/benchmarks.php` with country configs (IN, US, UK, CA, AU), currency maps, income/debt ranges, scoring weights, authentic benchmark data sources, and rules engine
+- [ ] Phase 1: Benchmark Data Architecture & Methodology Updates
+  - [ ] Enhance `includes/benchmarks.php` with peer cohort distribution data (India RBI, US Federal Reserve SCF, UK ONS) and percentile ranking methodology.
+  - [ ] Ensure null fallback for missing profiles ("Benchmark data unavailable for this profile.").
 
-- [x] Phase 2: Interactive Engines & Frontend Styling
-  - [x] Enhance `assets/css/style.css` with fintech dashboard components (gauge score, multi-step progress bar, comparison bars, persona cards, projection chart styling)
-  - [x] Build `assets/js/snapshot-engine.js` with 5 interactive homepage tools:
-    - [x] Tool 1: "Where Do You Stand Financially?" (Multi-step snapshot tool with currency switching, score calculation, benchmark comparison, next 3 priorities generator)
-    - [x] Tool 2: "Can You Afford This Loan?" (Interactive DTI & affordability calculator)
-    - [x] Tool 3: "Are You Financially Protected?" (Coverage risk matrix)
-    - [x] Tool 4: "What Could Your Money Become?" (Wealth projection + SVG chart)
-    - [x] Tool 5: "What's Your Financial Type?" (Financial persona quiz engine)
+- [ ] Phase 2: Modular PHP Components (`components/`)
+  - [ ] Build `components/hero-financial-assessment.php` (45% left content + SVG global network visual + 55% right 6-step panel).
+  - [ ] Build `components/financial-score.php` (Score gauge + rating classification).
+  - [ ] Build `components/financial-comparison.php` (Category position bars + "Where You Stand" distribution curve graph).
+  - [ ] Build `components/people-like-you.php` (Peer cohort comparison cards: Earn More %, Earn Less %, Similar Level %).
+  - [ ] Build `components/benchmark-message.php` (Educational disclosure & methodology).
 
-- [x] Phase 3: Homepage Redesign (`index.php`)
-  - [x] Build 2-column Fintech Hero ("Know Your Money. Know Your Position. Make Better Decisions.")
-  - [x] Embed 6-step progressive snapshot tool
-  - [x] Build visual Financial Snapshot Result Dashboard (Score gauge, 6 Position cards, "How Do You Compare?" bars, Next 3 Priorities, Category links)
-  - [x] Build Interactive Tools Suite section (Affordability, Protection, Wealth Projection, Persona Quiz)
-  - [x] Retain & enrich 3,000-word HTML SEO content structure (Finance, Loans, Credit Cards, Insurance, FAQ, CTAs)
+- [ ] Phase 3: Interactive JS Engine & Distribution Chart (`assets/js/`)
+  - [ ] Build `assets/js/financial-dashboard.js` & `assets/js/charts.js` for step progression, scoring, percentile calculation, and distribution curve pin animation.
 
-- [x] Phase 4: Quality Assurance & Git Push
-  - [x] Test multi-step user flow, country switching, scoring accuracy, and tool calculations
-  - [x] Commit and push changes to `https://github.com/vikashgpt4545/mark`
+- [ ] Phase 4: Header & Homepage Assembly (`components/header.php` & `index.php`)
+  - [ ] Update header navigation (Finance, Loans, Credit Cards, Insurance, Investing, Calculators, Guides, About + "Check Your Position" CTA).
+  - [ ] Reassemble `index.php` with 100% wide Global Hero, "Your Financial Position" Dashboard, 5 Premium Feature Cards, 4 Core Niche Hubs, and 3,000-word SEO content.
+
+- [ ] Phase 5: QA & Git Push
+  - [ ] Test mobile responsiveness, step validation, benchmark fallbacks, and calculations.
+  - [ ] Commit and push changes to `https://github.com/vikashgpt4545/mark`.
