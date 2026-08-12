@@ -24,9 +24,7 @@ $countries = finwise_get_global_country_configs();
                     Worldwide
                 </h1>
 
-                <p class="hero-subtext">
-                    Discover your financial position, compare your profile with relevant benchmarks, and see which areas of your financial life need the most attention.
-                </p>
+
 
                 <!-- Compact 2x2 Trust Indicators -->
                 <div class="trust-indicators-grid">
@@ -60,15 +58,7 @@ $countries = finwise_get_global_country_configs();
                     </div>
                 </div>
 
-                <!-- Primary CTA Buttons -->
-                <div class="hero-actions">
-                    <a href="#hero-snapshot-widget" class="btn btn-emerald btn-lg">
-                        Check My Financial Position →
-                    </a>
-                    <a href="#interactive-tools-suite" class="btn btn-outline-hero btn-lg">
-                        Explore Financial Tools
-                    </a>
-                </div>
+
             </div>
 
             <!-- Right Side (55% Width): Large Interactive Financial Dashboard Card -->
