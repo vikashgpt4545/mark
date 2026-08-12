@@ -34,18 +34,6 @@ include __DIR__ . '/components/header.php';
      ========================================================================== -->
 <?php include __DIR__ . '/components/financial-position-preview.php'; ?>
 
-<!-- ==========================================================================
-     3. FINANCIAL POSITION DASHBOARD PREVIEW (results after form submit)
-     ========================================================================== -->
-<section id="hero-snapshot-results" class="section section-dark-dashboard" style="padding: 3.5rem 0 2.5rem 0;">
-    <div class="container container-wide">
-        <!-- Large 3-Column Glassmorphism Dashboard Container -->
-        <?php include __DIR__ . '/components/financial-comparison.php'; ?>
-
-        <!-- Methodology & Disclaimer Notice -->
-        <?php include __DIR__ . '/components/benchmark-message.php'; ?>
-    </div>
-</section>
 
 
 <!-- ==========================================================================
