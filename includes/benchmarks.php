@@ -11,7 +11,6 @@ if (!defined('FINWISE_APP')) {
  * Supported Countries Configuration
  */
 function finwise_get_global_country_configs() {
-    return [
     $supported = [
         'IN' => ['name'=>'India','flag'=>'🇮🇳','currency'=>'INR','symbol'=>'₹',
             'incomes'=>[

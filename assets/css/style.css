@@ -323,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title .gradient-text {
     background: linear-gradient(135deg, #38bdf8, #34d399);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1402,6 +1403,7 @@ h1, h2, h3, h4, h5, h6 {
 .gradient-text {
     background: linear-gradient(135deg, #38bdf8, #34d399);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -2878,7 +2880,6 @@ h1, h2, h3, h4, h5, h6 {
 .fpp-people-icons { font-size: 1rem; }
 
 /* Global Distribution Bar */
-.fpp-dist-block {}
 .fpp-dist-bar {
     display: flex;
     height: 32px;

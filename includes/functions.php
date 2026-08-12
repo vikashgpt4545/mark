@@ -18,7 +18,7 @@ function e(?string $string): string {
 /**
  * Format currency amounts nicely
  */
-function format_currency($amount, $symbol = '$'): string {
+function format_currency(float|int|string $amount, string $symbol = '$'): string {
     if (!is_numeric($amount)) return $symbol . '0';
     return $symbol . number_format((float)$amount, 2);
 }
@@ -26,7 +26,7 @@ function format_currency($amount, $symbol = '$'): string {
 /**
  * Sanitize query strings
  */
-function sanitize_input($data): string {
+function sanitize_input(?string $data): string {
     return trim(strip_tags($data ?? ''));
 }
 
