@@ -31,7 +31,7 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                                     stroke="url(#fppGrad)" stroke-width="10"
                                     stroke-linecap="round"
                                     stroke-dasharray="327"
-                                    stroke-dashoffset="89"
+                                    stroke-dashoffset="327"
                                     transform="rotate(-90 60 60)"/>
                                 <defs>
                                     <linearGradient id="fppGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -41,12 +41,12 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                                 </defs>
                             </svg>
                             <div class="fpp-gauge-center">
-                                <span class="fpp-score-num" id="fpp-score-num">72</span>
+                                <span class="fpp-score-num" id="fpp-score-num">--</span>
                                 <span class="fpp-score-denom">/100</span>
                             </div>
                         </div>
-                        <div class="fpp-gauge-label" id="fpp-score-label">Above Average</div>
-                        <div class="fpp-gauge-badge" id="fpp-score-badge">Better than 68% of people</div>
+                        <div class="fpp-gauge-label" id="fpp-score-label">Pending Selection</div>
+                        <div class="fpp-gauge-badge" id="fpp-score-badge">Complete steps above to reveal</div>
                     </div>
 
                     <!-- Category Bars -->
@@ -54,28 +54,28 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                         <div class="fpp-bars-title">Your Score vs World</div>
                         <div class="fpp-bar-row">
                             <span class="fpp-bar-label">Income Level</span>
-                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-income" style="width:78%"></div></div>
-                            <span class="fpp-bar-pct" id="fpp-pct-income">78%</span>
+                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-income" style="width:0%"></div></div>
+                            <span class="fpp-bar-pct" id="fpp-pct-income">--%</span>
                         </div>
                         <div class="fpp-bar-row">
                             <span class="fpp-bar-label">Savings Rate</span>
-                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-savings" style="width:55%"></div></div>
-                            <span class="fpp-bar-pct" id="fpp-pct-savings">55%</span>
+                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-savings" style="width:0%"></div></div>
+                            <span class="fpp-bar-pct" id="fpp-pct-savings">--%</span>
                         </div>
                         <div class="fpp-bar-row">
                             <span class="fpp-bar-label">Debt Level</span>
-                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-debt" style="width:62%"></div></div>
-                            <span class="fpp-bar-pct" id="fpp-pct-debt">62%</span>
+                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-debt" style="width:0%"></div></div>
+                            <span class="fpp-bar-pct" id="fpp-pct-debt">--%</span>
                         </div>
                         <div class="fpp-bar-row">
                             <span class="fpp-bar-label">Financial Security</span>
-                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-violet" id="fpp-bar-security" style="width:48%"></div></div>
-                            <span class="fpp-bar-pct" id="fpp-pct-security">48%</span>
+                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-violet" id="fpp-bar-security" style="width:0%"></div></div>
+                            <span class="fpp-bar-pct" id="fpp-pct-security">--%</span>
                         </div>
                         <div class="fpp-bar-row">
                             <span class="fpp-bar-label">Investment Level</span>
-                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-invest" style="width:70%"></div></div>
-                            <span class="fpp-bar-pct" id="fpp-pct-invest">70%</span>
+                            <div class="fpp-bar-track"><div class="fpp-bar-fill fpp-fill-cyan" id="fpp-bar-invest" style="width:0%"></div></div>
+                            <span class="fpp-bar-pct" id="fpp-pct-invest">--%</span>
                         </div>
                     </div>
                 </div>
@@ -104,14 +104,11 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                         <!-- Bell curve stroke -->
                         <path d="M10,148 C40,148 55,50 80,30 C100,14 120,8 150,8 C180,8 200,14 220,30 C245,50 260,148 290,148"
                               fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.9"/>
-                        <!-- "You" position highlight area (right of center ~68th percentile) -->
-                        <path d="M195,148 C205,148 215,65 220,30 C225,50 240,148 290,148 Z"
-                              fill="url(#bellHighlight)" opacity="0.7"/>
-                        <!-- "You" vertical arrow line -->
-                        <line id="fpp-bell-marker" x1="210" y1="148" x2="210" y2="42" stroke="#34d399" stroke-width="2" stroke-dasharray="4,3"/>
+                        <!-- "You" vertical arrow line (centered by default) -->
+                        <line id="fpp-bell-marker" x1="150" y1="148" x2="150" y2="42" stroke="#34d399" stroke-width="2" stroke-dasharray="4,3"/>
                         <!-- "You" label -->
-                        <text x="210" y="36" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700">You</text>
-                        <polygon points="210,44 205,36 215,36" fill="#34d399"/>
+                        <text x="150" y="36" text-anchor="middle" fill="#34d399" font-size="12" font-weight="700">You</text>
+                        <polygon points="150,44 145,36 155,36" fill="#34d399"/>
                         <!-- X axis line -->
                         <line x1="10" y1="148" x2="290" y2="148" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
                     </svg>
@@ -121,7 +118,7 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                         <span>Excellent</span>
                     </div>
                 </div>
-                <p class="fpp-bell-status">You are in the <strong id="fpp-bell-percentile">top 32%</strong> worldwide</p>
+                <p class="fpp-bell-status">Complete assessment above to calculate your <strong id="fpp-bell-percentile">global rank</strong></p>
             </div>
 
             <!-- PANEL 3: People Like You + Global Distribution -->
@@ -131,22 +128,22 @@ if (!defined('FINWISE_APP')) die('Direct access forbidden.');
                     <h3 class="fpp-panel-title">People Like You</h3>
                     <div class="fpp-people-grid">
                         <div class="fpp-people-stat">
-                            <div class="fpp-people-pct fpp-pct-cyan" id="fpp-earn-more">32%</div>
+                            <div class="fpp-people-pct fpp-pct-cyan" id="fpp-earn-more">--%</div>
                             <div class="fpp-people-lbl">Earn More</div>
                             <div class="fpp-people-icons">👥</div>
                         </div>
                         <div class="fpp-people-stat">
-                            <div class="fpp-people-pct fpp-pct-amber" id="fpp-earn-less">35%</div>
+                            <div class="fpp-people-pct fpp-pct-amber" id="fpp-earn-less">--%</div>
                             <div class="fpp-people-lbl">Earn Less</div>
                             <div class="fpp-people-icons">👤</div>
                         </div>
                         <div class="fpp-people-stat">
-                            <div class="fpp-people-pct fpp-pct-green" id="fpp-same-level">18%</div>
+                            <div class="fpp-people-pct fpp-pct-green" id="fpp-same-level">--%</div>
                             <div class="fpp-people-lbl">Same Level</div>
                             <div class="fpp-people-icons">🤝</div>
                         </div>
                         <div class="fpp-people-stat">
-                            <div class="fpp-people-pct fpp-pct-muted" id="fpp-no-data">15%</div>
+                            <div class="fpp-people-pct fpp-pct-muted" id="fpp-no-data">--%</div>
                             <div class="fpp-people-lbl">No Data</div>
                             <div class="fpp-people-icons">❓</div>
                         </div>

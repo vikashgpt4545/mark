@@ -412,7 +412,9 @@
             const markerLine = document.getElementById('fpp-bell-marker');
             if (markerLine) { markerLine.setAttribute('x1', markerX); markerLine.setAttribute('x2', markerX); }
             const fppBellPct = document.getElementById('fpp-bell-percentile');
-            if (fppBellPct) fppBellPct.textContent = `top ${topPct}%`;
+            if (fppBellPct && fppBellPct.parentElement) {
+                fppBellPct.parentElement.innerHTML = `You are in the <strong id="fpp-bell-percentile">top ${topPct}%</strong> worldwide`;
+            }
 
             // People Like You
             const earnMore = topPct;
