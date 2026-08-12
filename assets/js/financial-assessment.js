@@ -231,12 +231,16 @@
         for (let i = 1; i <= totalSteps; i++) {
             const el = document.getElementById(`snap-step-${i}`);
             if (el) el.style.display = (i === currentStep) ? 'block' : 'none';
-        }
 
-        const stepTxt = document.getElementById('snap-step-text');
-        const progBar = document.getElementById('snap-progress-bar');
-        if (stepTxt) stepTxt.textContent = `Step ${currentStep} of ${totalSteps}`;
-        if (progBar) progBar.style.width = `${(currentStep / totalSteps) * 100}%`;
+            const pill = document.getElementById(`step-pill-${i}`);
+            if (pill) {
+                if (i === currentStep) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            }
+        }
 
         const backBtn = document.getElementById('snap-back-btn');
         const nextBtn = document.getElementById('snap-next-btn');

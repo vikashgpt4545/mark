@@ -121,46 +121,35 @@
 
             if (!bData) {
                 // Fallback for missing benchmark profile with ZERO fake data!
-                if (pinGroup) pinGroup.style.transform = `translate(250px, 60px)`;
+                if (pinGroup) pinGroup.style.transform = `translate(200px, 45px)`;
                 if (pinText) pinText.textContent = 'Unranked';
-                if (curveBadge) {
-                    curveBadge.textContent = 'Benchmark Unavailable';
-                    curveBadge.className = 'badge badge-warning';
-                }
                 if (curveDesc) {
-                    curveDesc.innerHTML = '<strong>Your position could not be reliably ranked because benchmark data is unavailable for this profile.</strong> We never fabricate statistics.';
+                    curveDesc.innerHTML = 'Your position could not be reliably ranked because benchmark data is unavailable for this profile.';
                 }
 
                 if (moreEl) moreEl.textContent = 'N/A';
                 if (similarEl) similarEl.textContent = 'N/A';
                 if (lessEl) lessEl.textContent = 'N/A';
-                if (statusBox) {
-                    statusBox.innerHTML = `<strong>Data Status:</strong> Benchmark data is unavailable for this age and country combination (${countryData.name}). Standard personal metrics are displayed above without population ranking.`;
-                }
                 return;
             }
 
             // Authentic Benchmark Data Available
             const topPercentile = 100 - bData.rank;
-            const xPos = Math.round(10 + (480 * (bData.rank / 100)));
+            const xPos = Math.round(20 + (360 * (bData.rank / 100)));
 
-            if (pinGroup) pinGroup.style.transform = `translate(${xPos}px, 35px)`;
-            if (pinText) pinText.textContent = `Top ${topPercentile}%`;
-            if (curveBadge) {
-                curveBadge.textContent = `Top ${topPercentile}% Ranking`;
-                curveBadge.className = 'badge badge-emerald';
-            }
+            if (pinGroup) pinGroup.style.transform = `translate(${xPos}px, 20px)`;
+            if (pinText) pinText.textContent = `You`;
             if (curveDesc) {
-                curveDesc.innerHTML = `Based on verified central bank surveys in ${countryData.name}, <strong>you are in the top ${topPercentile}%</strong> of your peer demographic cohort.`;
+                curveDesc.innerHTML = `You are in the <strong style="color:#34d399;">top ${topPercentile}% worldwide</strong>`;
             }
+
+            const pill = document.getElementById('dash-score-percentile-pill');
+            if (pill) pill.textContent = `Better than ${bData.rank}% of people`;
 
             // Peer Cards
             if (moreEl) moreEl.textContent = `${bData.more}%`;
             if (similarEl) similarEl.textContent = `${bData.similar}%`;
             if (lessEl) lessEl.textContent = `${bData.less}%`;
-            if (statusBox) {
-                statusBox.innerHTML = `<strong>Data Source:</strong> ${bData.source}. Methodology: Age-cohort income distribution and household asset accumulation.`;
-            }
         },
 
         renderPriorities: function(emergScore, debtScore, insScore, savScore, invScore) {

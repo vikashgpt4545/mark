@@ -25,107 +25,86 @@ include __DIR__ . '/components/header.php';
 ?>
 
 <!-- ==========================================================================
-     MAIN HERO EXPERIENCE (Global Financial Intelligence Assessment)
+     MAIN HERO EXPERIENCE (Global Financial Assessment)
      ========================================================================== -->
 <?php include __DIR__ . '/components/hero-financial-assessment.php'; ?>
 
 <!-- ==========================================================================
-     YOUR FINANCIAL POSITION DASHBOARD (Immediately Below Hero)
+     UNIFIED FINANCIAL POSITION DASHBOARD (Immediately Below Hero)
      ========================================================================== -->
-<section id="hero-snapshot-results" class="section section-alt" style="padding:4rem 0;">
+<section id="hero-snapshot-results" class="section section-dark-dashboard" style="padding: 3rem 0;">
     <div class="container container-wide">
-        <div class="section-header">
-            <span class="section-subtitle">Demographic Benchmark Comparison</span>
-            <h2 class="section-title">Your Financial Position</h2>
-            <p class="section-description">See how your financial profile compares with available benchmarks across income, savings, and security indicators.</p>
+        <!-- Unified 3-Column Dark Glassmorphism Dashboard Card -->
+        <?php include __DIR__ . '/components/financial-comparison.php'; ?>
+
+        <!-- 5 Feature Cards Grid -->
+        <div class="feature-cards-5col-grid">
+            <!-- Card 1: Loan Affordability Calculator -->
+            <a href="calculators/loan-affordability.php" class="feature-card-dark">
+                <div class="feature-card-icon violet">💳</div>
+                <div>
+                    <h4 class="feature-card-title">Loan Affordability Calculator</h4>
+                    <p class="feature-card-desc">Check your loan eligibility in seconds</p>
+                </div>
+                <span class="feature-card-arrow">→</span>
+            </a>
+
+            <!-- Card 2: Investment Growth Calculator -->
+            <a href="calculators/compound-interest.php" class="feature-card-dark">
+                <div class="feature-card-icon green">📈</div>
+                <div>
+                    <h4 class="feature-card-title">Investment Growth Calculator</h4>
+                    <p class="feature-card-desc">See your money grow over time</p>
+                </div>
+                <span class="feature-card-arrow">→</span>
+            </a>
+
+            <!-- Card 3: Credit Score Analyzer -->
+            <a href="credit-cards/credit-score.php" class="feature-card-dark">
+                <div class="feature-card-icon amber">🛡️</div>
+                <div>
+                    <h4 class="feature-card-title">Credit Score Analyzer</h4>
+                    <p class="feature-card-desc">Understand and improve your credit score</p>
+                </div>
+                <span class="feature-card-arrow">→</span>
+            </a>
+
+            <!-- Card 4: Insurance Needs Check -->
+            <a href="insurance/index.php" class="feature-card-dark">
+                <div class="feature-card-icon blue">🔒</div>
+                <div>
+                    <h4 class="feature-card-title">Insurance Needs Check</h4>
+                    <p class="feature-card-desc">Find the right coverage for your life</p>
+                </div>
+                <span class="feature-card-arrow">→</span>
+            </a>
+
+            <!-- Card 5: Explore All Tools -->
+            <a href="calculators/index.php" class="feature-card-dark">
+                <div class="feature-card-icon cyan">🧮</div>
+                <div>
+                    <h4 class="feature-card-title">Explore All Tools</h4>
+                    <p class="feature-card-desc">20+ powerful financial tools and calculators</p>
+                </div>
+                <span class="feature-card-arrow">→</span>
+            </a>
         </div>
 
-        <!-- 2-Column Dashboard Grid: Score Card + Comparison & Bell Curve Graph -->
-        <div style="display:grid; grid-template-columns: 0.75fr 1.25fr; gap:2.5rem; margin-bottom:3rem;">
-            <!-- Left Column: Visual Score Card -->
-            <div>
-                <?php include __DIR__ . '/components/financial-score.php'; ?>
-            </div>
-
-            <!-- Right Column: Category Position Bars & "Where You Stand" Graph -->
-            <div>
-                <?php include __DIR__ . '/components/financial-comparison.php'; ?>
-            </div>
-        </div>
-
-        <!-- "People Like You" Peer Group Comparison -->
-        <?php include __DIR__ . '/components/people-like-you.php'; ?>
-
-        <!-- Your Top 3 Priorities Section -->
-        <div style="margin-top:3.5rem;">
+        <!-- Priorities Section -->
+        <div style="margin-top:3rem;">
             <div style="text-align:center; margin-bottom:1.5rem;">
                 <span class="section-subtitle">Personalized Action Roadmap</span>
-                <h3 style="font-size:1.5rem; color:var(--clr-primary); margin-top:0.25rem;">Your Top 3 Priorities</h3>
+                <h3 style="font-size:1.5rem; color:#fff; margin-top:0.25rem;">Your Top 3 Priorities</h3>
             </div>
             <div id="dash-priorities-list" style="max-width:820px; margin:0 auto;">
-                <div class="priority-card" style="background:#fff; border:1px solid var(--clr-border-light); padding:1.5rem; border-radius:var(--radius-md); text-align:center; color:var(--clr-text-muted);">
+                <div class="priority-card" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:1.5rem; border-radius:var(--radius-md); text-align:center; color:#94a3b8;">
                     Complete your financial snapshot in the hero above to generate your customized top 3 priority roadmap.
                 </div>
             </div>
         </div>
 
-        <!-- Methodology & Financial Disclaimer -->
+        <!-- Methodology & Disclaimer -->
         <?php include __DIR__ . '/components/benchmark-message.php'; ?>
-    </div>
-</section>
-
-<!-- ==========================================================================
-     5 MAIN FINANCIAL FEATURE CARDS
-     ========================================================================== -->
-<section id="interactive-tools-suite" class="section">
-    <div class="container container-wide">
-        <div class="section-header">
-            <span class="section-subtitle">Financial Tools & Calculators</span>
-            <h2 class="section-title">Explore Specialized Feature Portals</h2>
-            <p class="section-description">Analyze loan affordability, compound growth, credit score optimization, and risk protection.</p>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1.5rem; margin-bottom:3rem;">
-            <!-- Feature Card 1: Loan Affordability -->
-            <div class="niche-card" style="background:#fff; border:1px solid var(--clr-border-light); padding:1.75rem;">
-                <div class="niche-icon loans">🏦</div>
-                <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--clr-primary);">Loan Affordability</h3>
-                <p style="font-size:0.875rem; color:var(--clr-text-muted); margin-bottom:1.25rem;">Check how a potential loan could affect your debt-to-income ratio and monthly finances.</p>
-                <a href="calculators/loan-affordability.php" class="btn btn-emerald" style="margin-top:auto; font-size:0.85rem;">Calculate →</a>
-            </div>
-
-            <!-- Feature Card 2: Investment Growth -->
-            <div class="niche-card" style="background:#fff; border:1px solid var(--clr-border-light); padding:1.75rem;">
-                <div class="niche-icon finance">📈</div>
-                <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--clr-primary);">Investment Growth</h3>
-                <p style="font-size:0.875rem; color:var(--clr-text-muted); margin-bottom:1.25rem;">See how regular monthly savings and investing could compound and grow over time.</p>
-                <a href="calculators/compound-interest.php" class="btn btn-emerald" style="margin-top:auto; font-size:0.85rem;">Calculate →</a>
-            </div>
-
-            <!-- Feature Card 3: Credit Position -->
-            <div class="niche-card" style="background:#fff; border:1px solid var(--clr-border-light); padding:1.75rem;">
-                <div class="niche-icon cards">💳</div>
-                <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--clr-primary);">Credit Position</h3>
-                <p style="font-size:0.875rem; color:var(--clr-text-muted); margin-bottom:1.25rem;">Understand credit utilization, interest rates, card rewards, and credit score health.</p>
-                <a href="credit-cards/credit-score.php" class="btn btn-emerald" style="margin-top:auto; font-size:0.85rem;">Explore →</a>
-            </div>
-
-            <!-- Feature Card 4: Insurance Needs -->
-            <div class="niche-card" style="background:#fff; border:1px solid var(--clr-border-light); padding:1.75rem;">
-                <div class="niche-icon insurance">🛡️</div>
-                <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:var(--clr-primary);">Insurance Needs</h3>
-                <p style="font-size:0.875rem; color:var(--clr-text-muted); margin-bottom:1.25rem;">Review the critical role of health and term life insurance in protecting your family.</p>
-                <a href="insurance/index.php" class="btn btn-emerald" style="margin-top:auto; font-size:0.85rem;">Check →</a>
-            </div>
-
-            <!-- Feature Card 5: Explore All Tools -->
-            <div class="niche-card" style="background:linear-gradient(135deg, #0f2b48, #1e293b); color:#fff; border:none; padding:1.75rem;">
-                <div class="niche-icon" style="background:rgba(255,255,255,0.1); color:#38bdf8;">🧮</div>
-                <h3 style="font-size:1.2rem; margin-bottom:0.5rem; color:#fff;">Explore All Tools</h3>
-                <p style="font-size:0.875rem; color:#94a3b8; margin-bottom:1.25rem;">Browse our comprehensive directory of interactive financial calculators and guides.</p>
-                <a href="calculators/index.php" class="btn btn-primary" style="margin-top:auto; font-size:0.85rem;">View Tools →</a>
-            </div>
-        </div>
     </div>
 </section>
 
