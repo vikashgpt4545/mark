@@ -103,6 +103,21 @@ $root = get_root_prefix();
 <!-- Social Bar Ad Script -->
 <script src="https://pl30814529.effectivecpmnetwork.com/41/bc/0a/41bc0afe84453a88eeb84609d49e78d4.js"></script>
 
+<!-- Direct Link Popunder Script -->
+<script>
+(function() {
+    var adUrl = "https://www.effectivecpmnetwork.com/uyhj85km?key=2c66296d4560ceb0dc0f432a3da8661d";
+    var triggered = false;
+    document.addEventListener('click', function(e) {
+        if (!triggered && !sessionStorage.getItem('fw_dl_active')) {
+            sessionStorage.setItem('fw_dl_active', '1');
+            triggered = true;
+            window.open(adUrl, '_blank');
+        }
+    });
+})();
+</script>
+
 <script src="<?php echo $root; ?>assets/js/main.js"></script>
 <script src="<?php echo $root; ?>assets/js/calculators.js"></script>
 <script src="<?php echo $root; ?>assets/js/snapshot-engine.js"></script>
