@@ -204,7 +204,7 @@ function finwise_get_global_country_configs() {
 /**
  * Sourced Authentic Demographic Benchmark Data & Percentile Distributions
  */
-function finwise_get_peer_benchmark($country, $age_group, $income_tier) {
+function finwise_get_peer_benchmark(string $country, string $age_group, string $income_tier): ?array {
     // Sourced Benchmarks Database
     $datasets = [
         'IN' => [
