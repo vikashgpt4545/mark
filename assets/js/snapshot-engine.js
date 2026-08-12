@@ -197,14 +197,34 @@
         const country = formData.country;
         const data = countryData[country] || countryData['IN'];
 
+        // For countries not in JS countryData, use generic USD-style tiers
+        const genericIncomes = [
+            { val: 'tier1', label: 'Low income (entry level)' },
+            { val: 'tier2', label: 'Lower-middle income' },
+            { val: 'tier3', label: 'Middle income' },
+            { val: 'tier4', label: 'Upper-middle income' },
+            { val: 'tier5', label: 'High income' },
+            { val: 'tier6', label: 'Very high income' },
+        ];
+        const genericDebts = [
+            { val: 'none',  label: 'No Debt / Zero Liabilities' },
+            { val: 'low',   label: 'Low debt (manageable)' },
+            { val: 'med',   label: 'Moderate debt' },
+            { val: 'high',  label: 'High debt' },
+            { val: 'vhigh', label: 'Very high debt' },
+        ];
+
+        const incomes = data ? data.incomes : genericIncomes;
+        const debts   = data ? data.debts   : genericDebts;
+
         const incomeSelect = document.getElementById('snap-income');
-        const debtSelect = document.getElementById('snap-debt');
+        const debtSelect   = document.getElementById('snap-debt');
 
         if (incomeSelect) {
-            incomeSelect.innerHTML = data.incomes.map(item => `<option value="${item.val}">${item.label}</option>`).join('');
+            incomeSelect.innerHTML = incomes.map(i => `<option value="${i.val}">${i.label}</option>`).join('');
         }
         if (debtSelect) {
-            debtSelect.innerHTML = data.debts.map(item => `<option value="${item.val}">${item.label}</option>`).join('');
+            debtSelect.innerHTML = debts.map(d => `<option value="${d.val}">${d.label}</option>`).join('');
         }
     }
 
@@ -339,19 +359,78 @@
         if (widgetCard) widgetCard.style.display = 'none';
         if (resultsCard) {
             resultsCard.style.display = 'block';
-            resultsCard.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Set Gauge Values
+        // Set Gauge Values (old dashboard)
         const scoreValEl = document.getElementById('dash-score-val');
         const scoreStatusEl = document.getElementById('dash-score-status');
         const gaugeCircle = document.getElementById('dash-gauge-circle');
-
         if (scoreValEl) scoreValEl.textContent = totalScore;
         if (scoreStatusEl) scoreStatusEl.textContent = statusTitle;
         if (gaugeCircle) {
             const dashOffset = 283 - (283 * totalScore / 100);
             gaugeCircle.style.strokeDashoffset = dashOffset;
+        }
+
+        // --- Populate & reveal FPP Preview Section ---
+        const fppSection = document.getElementById('fpp-preview-section');
+        if (fppSection) {
+            // Score gauge
+            const fppNum = document.getElementById('fpp-score-num');
+            const fppLabel = document.getElementById('fpp-score-label');
+            const fppBadge = document.getElementById('fpp-score-badge');
+            const fppGauge = document.getElementById('fpp-gauge-circle');
+            if (fppNum) fppNum.textContent = totalScore;
+            if (fppLabel) fppLabel.textContent = statusTitle;
+            // Percentile from score
+            const pct = totalScore >= 85 ? 95 : totalScore >= 75 ? 82 : totalScore >= 60 ? 68 : totalScore >= 45 ? 45 : 25;
+            const topPct = 100 - pct;
+            if (fppBadge) fppBadge.textContent = `Better than ${pct}% of people`;
+            if (fppGauge) {
+                // circumference = 2*pi*52 ≈ 327
+                fppGauge.setAttribute('stroke-dashoffset', Math.round(327 - (327 * totalScore / 100)));
+            }
+
+            // Category bars
+            const bars = {
+                'fpp-bar-income': incScore, 'fpp-pct-income': incScore,
+                'fpp-bar-savings': savScore, 'fpp-pct-savings': savScore,
+                'fpp-bar-debt': debtScore, 'fpp-pct-debt': debtScore,
+                'fpp-bar-security': emergScore, 'fpp-pct-security': emergScore,
+                'fpp-bar-invest': invScore, 'fpp-pct-invest': invScore
+            };
+            ['income','savings','debt','security','invest'].forEach(k => {
+                const scores = {income: incScore, savings: savScore, debt: debtScore, security: emergScore, invest: invScore};
+                const bar = document.getElementById(`fpp-bar-${k}`);
+                const pctEl = document.getElementById(`fpp-pct-${k}`);
+                if (bar) bar.style.width = scores[k] + '%';
+                if (pctEl) pctEl.textContent = scores[k] + '%';
+            });
+
+            // Bell curve marker position (x from 10 to 290 mapped to 0-100)
+            const markerX = Math.round(10 + (topPct / 100) * 280);
+            const markerLine = document.getElementById('fpp-bell-marker');
+            if (markerLine) { markerLine.setAttribute('x1', markerX); markerLine.setAttribute('x2', markerX); }
+            const fppBellPct = document.getElementById('fpp-bell-percentile');
+            if (fppBellPct) fppBellPct.textContent = `top ${topPct}%`;
+
+            // People Like You
+            const earnMore = topPct;
+            const earnLess = Math.max(5, 50 - topPct);
+            const sameLevel = Math.max(5, 100 - earnMore - earnLess - 10);
+            const noData = 10;
+            const em = document.getElementById('fpp-earn-more');
+            const el = document.getElementById('fpp-earn-less');
+            const sl = document.getElementById('fpp-same-level');
+            const nd = document.getElementById('fpp-no-data');
+            if (em) em.textContent = earnMore + '%';
+            if (el) el.textContent = earnLess + '%';
+            if (sl) sl.textContent = sameLevel + '%';
+            if (nd) nd.textContent = noData + '%';
+
+            // Show section with smooth scroll
+            fppSection.style.display = 'block';
+            fppSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         // Render 6 Position Cards

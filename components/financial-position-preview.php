@@ -6,7 +6,7 @@
 if (!defined('FINWISE_APP')) die('Direct access forbidden.');
 ?>
 
-<section class="fpp-section">
+<section class="fpp-section" id="fpp-preview-section" style="display:none;">
     <div class="container container-wide">
 
         <!-- ================================================================
