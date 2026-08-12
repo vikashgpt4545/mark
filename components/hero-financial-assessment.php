@@ -142,7 +142,9 @@ $countries = finwise_get_global_country_configs();
                                         <option value="35-44">35 – 44 years</option>
                                         <option value="45-54">45 – 54 years</option>
                                         <option value="55plus">55+ years</option>
+                                        <option value="custom">✏️ Enter Custom Age...</option>
                                     </select>
+                                    <input type="text" id="snap-age-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. 28 years">
                                 </div>
                             </div>
 
@@ -153,6 +155,7 @@ $countries = finwise_get_global_country_configs();
                                 <div class="snap-form-group">
                                     <label class="snap-label">Monthly Income</label>
                                     <select id="snap-income" class="form-select-dark"></select>
+                                    <input type="text" id="snap-income-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. ₹1,25,000 / month">
                                 </div>
                             </div>
 
@@ -168,11 +171,14 @@ $countries = finwise_get_global_country_configs();
                                         <option value="10-20" selected>10% – 20% of income</option>
                                         <option value="20-30">20% – 30% of income</option>
                                         <option value="30plus">Over 30% of income</option>
+                                        <option value="custom">✏️ Enter Custom Savings %...</option>
                                     </select>
+                                    <input type="text" id="snap-savings-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. 25%">
                                 </div>
                                 <div class="snap-form-group" style="margin-top:1rem;">
                                     <label class="snap-label">Total Debt Liabilities</label>
                                     <select id="snap-debt" class="form-select-dark"></select>
+                                    <input type="text" id="snap-debt-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. ₹5,00,000 total debt">
                                 </div>
                             </div>
 
@@ -188,7 +194,9 @@ $countries = finwise_get_global_country_configs();
                                         <option value="3-6" selected>3 – 6 months</option>
                                         <option value="6-12">6 – 12 months</option>
                                         <option value="over12">More than 12 months</option>
+                                        <option value="custom">✏️ Enter Custom Months...</option>
                                     </select>
+                                    <input type="text" id="snap-emergency-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. 8 months">
                                 </div>
                                 <div class="snap-form-group" style="margin-top:1rem;">
                                     <label class="snap-label">Active Insurance Policies</label>
@@ -197,7 +205,9 @@ $countries = finwise_get_global_country_configs();
                                         <label class="custom-checkbox-dark"><input type="checkbox" name="snap-ins" value="life" checked> Term Life</label>
                                         <label class="custom-checkbox-dark"><input type="checkbox" name="snap-ins" value="auto"> Auto</label>
                                         <label class="custom-checkbox-dark"><input type="checkbox" name="snap-ins" value="home"> Home</label>
+                                        <label class="custom-checkbox-dark"><input type="checkbox" id="snap-ins-custom-chk" name="snap-ins" value="custom"> ✏️ Add Custom</label>
                                     </div>
+                                    <input type="text" id="snap-ins-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. Disability / Cyber Insurance">
                                 </div>
                             </div>
 
@@ -211,7 +221,9 @@ $countries = finwise_get_global_country_configs();
                                     <label class="custom-checkbox-dark"><input type="checkbox" name="snap-inv" value="mf"> Mutual Funds</label>
                                     <label class="custom-checkbox-dark"><input type="checkbox" name="snap-inv" value="retirement"> Retirement</label>
                                     <label class="custom-checkbox-dark"><input type="checkbox" name="snap-inv" value="property"> Real Estate</label>
+                                    <label class="custom-checkbox-dark"><input type="checkbox" id="snap-inv-custom-chk" name="snap-inv" value="custom"> ✏️ Add Custom</label>
                                 </div>
+                                <input type="text" id="snap-inv-custom" class="form-input-dark custom-input-field" style="display:none; margin-top:0.6rem;" placeholder="e.g. Crypto / Gold / Startups">
                             </div>
 
                             <!-- Navigation Buttons -->

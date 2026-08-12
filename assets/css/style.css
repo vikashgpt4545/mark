@@ -1543,7 +1543,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
 }
 
-.form-select-dark {
+.form-select-dark,
+.form-input-dark {
     width: 100%;
     padding: 0.85rem 1.1rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1554,10 +1555,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-body);
 }
 
-.form-select-dark:focus {
+.form-select-dark:focus,
+.form-input-dark:focus {
     outline: none;
     border-color: #38bdf8;
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+.custom-input-field {
+    transition: all 0.3s ease;
+    border-color: #38bdf8 !important;
 }
 
 .btn-gradient-blue {

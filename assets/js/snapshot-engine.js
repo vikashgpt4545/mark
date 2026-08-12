@@ -189,8 +189,50 @@
             });
         }
 
-        // Initialize Country Dropdowns
+        // Initialize Country Dropdowns & Custom Option Listeners
         updateCountryDependentDropdowns();
+        bindCustomOptionListeners();
+    }
+
+    function bindCustomOptionListeners() {
+        const customFields = [
+            { selectId: 'snap-age', inputId: 'snap-age-custom' },
+            { selectId: 'snap-income', inputId: 'snap-income-custom' },
+            { selectId: 'snap-savings', inputId: 'snap-savings-custom' },
+            { selectId: 'snap-debt', inputId: 'snap-debt-custom' },
+            { selectId: 'snap-emergency', inputId: 'snap-emergency-custom' }
+        ];
+
+        customFields.forEach(field => {
+            const selectEl = document.getElementById(field.selectId);
+            const inputEl = document.getElementById(field.inputId);
+            if (selectEl && inputEl) {
+                selectEl.addEventListener('change', () => {
+                    inputEl.style.display = (selectEl.value === 'custom') ? 'block' : 'none';
+                    if (selectEl.value === 'custom') inputEl.focus();
+                });
+            }
+        });
+
+        // Custom Insurance Checkbox
+        const insChk = document.getElementById('snap-ins-custom-chk');
+        const insInput = document.getElementById('snap-ins-custom');
+        if (insChk && insInput) {
+            insChk.addEventListener('change', () => {
+                insInput.style.display = insChk.checked ? 'block' : 'none';
+                if (insChk.checked) insInput.focus();
+            });
+        }
+
+        // Custom Investment Checkbox
+        const invChk = document.getElementById('snap-inv-custom-chk');
+        const invInput = document.getElementById('snap-inv-custom');
+        if (invChk && invInput) {
+            invChk.addEventListener('change', () => {
+                invInput.style.display = invChk.checked ? 'block' : 'none';
+                if (invChk.checked) invInput.focus();
+            });
+        }
     }
 
     function updateCountryDependentDropdowns() {
@@ -221,10 +263,10 @@
         const debtSelect   = document.getElementById('snap-debt');
 
         if (incomeSelect) {
-            incomeSelect.innerHTML = incomes.map(i => `<option value="${i.val}">${i.label}</option>`).join('');
+            incomeSelect.innerHTML = incomes.map(i => `<option value="${i.val}">${i.label}</option>`).join('') + '<option value="custom">✏️ Enter Custom Amount...</option>';
         }
         if (debtSelect) {
-            debtSelect.innerHTML = debts.map(d => `<option value="${d.val}">${d.label}</option>`).join('');
+            debtSelect.innerHTML = debts.map(d => `<option value="${d.val}">${d.label}</option>`).join('') + '<option value="custom">✏️ Enter Custom Amount...</option>';
         }
     }
 
@@ -241,23 +283,38 @@
 
     function saveStepData(step) {
         const ageSelect = document.getElementById('snap-age');
+        const ageCustom = document.getElementById('snap-age-custom');
         const incomeSelect = document.getElementById('snap-income');
+        const incomeCustom = document.getElementById('snap-income-custom');
         const savingsSelect = document.getElementById('snap-savings');
+        const savingsCustom = document.getElementById('snap-savings-custom');
         const debtSelect = document.getElementById('snap-debt');
+        const debtCustom = document.getElementById('snap-debt-custom');
         const emergencySelect = document.getElementById('snap-emergency');
+        const emergencyCustom = document.getElementById('snap-emergency-custom');
 
-        if (ageSelect) formData.age = ageSelect.value;
-        if (incomeSelect) formData.income = incomeSelect.value;
-        if (savingsSelect) formData.savings = savingsSelect.value;
-        if (debtSelect) formData.debt = debtSelect.value;
-        if (emergencySelect) formData.emergency = emergencySelect.value;
+        if (ageSelect) formData.age = (ageSelect.value === 'custom' && ageCustom && ageCustom.value.trim()) ? ageCustom.value.trim() : ageSelect.value;
+        if (incomeSelect) formData.income = (incomeSelect.value === 'custom' && incomeCustom && incomeCustom.value.trim()) ? incomeCustom.value.trim() : incomeSelect.value;
+        if (savingsSelect) formData.savings = (savingsSelect.value === 'custom' && savingsCustom && savingsCustom.value.trim()) ? savingsCustom.value.trim() : savingsSelect.value;
+        if (debtSelect) formData.debt = (debtSelect.value === 'custom' && debtCustom && debtCustom.value.trim()) ? debtCustom.value.trim() : debtSelect.value;
+        if (emergencySelect) formData.emergency = (emergencySelect.value === 'custom' && emergencyCustom && emergencyCustom.value.trim()) ? emergencyCustom.value.trim() : emergencySelect.value;
 
         // Checkboxes for Insurance
-        const insChecked = Array.from(document.querySelectorAll('input[name="snap-ins"]:checked')).map(cb => cb.value);
+        let insChecked = Array.from(document.querySelectorAll('input[name="snap-ins"]:checked')).map(cb => cb.value);
+        const insCustomVal = document.getElementById('snap-ins-custom');
+        if (insChecked.includes('custom') && insCustomVal && insCustomVal.value.trim()) {
+            insChecked = insChecked.filter(v => v !== 'custom');
+            insChecked.push(insCustomVal.value.trim());
+        }
         if (insChecked.length > 0) formData.insurance = insChecked;
 
         // Checkboxes for Investments
-        const invChecked = Array.from(document.querySelectorAll('input[name="snap-inv"]:checked')).map(cb => cb.value);
+        let invChecked = Array.from(document.querySelectorAll('input[name="snap-inv"]:checked')).map(cb => cb.value);
+        const invCustomVal = document.getElementById('snap-inv-custom');
+        if (invChecked.includes('custom') && invCustomVal && invCustomVal.value.trim()) {
+            invChecked = invChecked.filter(v => v !== 'custom');
+            invChecked.push(invCustomVal.value.trim());
+        }
         if (invChecked.length > 0) formData.investments = invChecked;
     }
 
