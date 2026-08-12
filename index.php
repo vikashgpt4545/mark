@@ -29,17 +29,12 @@ include __DIR__ . '/components/header.php';
      ========================================================================== -->
 <?php include __DIR__ . '/components/hero-financial-assessment.php'; ?>
 
-<!-- Ad Banner Placement Directly After Hero (Desktop Only) -->
-<div class="container-after-hero-ad">
-    <?php $ad_slot_position = 'after-hero'; include __DIR__ . '/components/ad-slot.php'; ?>
+<!-- Ad Banner Placement Directly After Hero (Mobile Only) -->
+<div class="container-after-hero-mobile-ad">
+    <?php $ad_slot_position = 'after-hero-mobile'; include __DIR__ . '/components/ad-slot.php'; ?>
 </div>
 
 <?php include __DIR__ . '/components/financial-position-preview.php'; ?>
-
-<!-- Ad Banner Placement After Where You Stand / Financial Position Preview Section (Mobile Only) -->
-<div class="container-after-fpp-mobile-ad">
-    <?php $ad_slot_position = 'after-fpp-mobile'; include __DIR__ . '/components/ad-slot.php'; ?>
-</div>
 
 
 
