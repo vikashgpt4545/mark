@@ -249,21 +249,32 @@
             }
         }
 
-        // Progress Text & Bar
-        const stepText = document.getElementById('snap-step-text');
+        // Update "Step X of 6" label in new topbar
+        const stepCurrent = document.getElementById('snap-label-current');
+        if (stepCurrent) stepCurrent.textContent = `Step ${currentStep} of ${totalSteps}`;
+
+        // Progress bar (new snap-progress-bar)
         const progressBar = document.getElementById('snap-progress-bar');
-        if (stepText) stepText.textContent = `Step ${currentStep} of ${totalSteps}`;
         if (progressBar) progressBar.style.width = `${(currentStep / totalSteps) * 100}%`;
 
-        // Button Visibility
+        // Grey out completed step numbers
+        for (let i = 2; i <= totalSteps; i++) {
+            const numEl = document.getElementById(`snap-num-${i}`);
+            if (numEl) {
+                numEl.classList.toggle('done', i <= currentStep);
+            }
+        }
+
+        // Button Visibility (new class names: snap-btn-back, snap-btn-continue, snap-btn-submit)
         const backBtn = document.getElementById('snap-back-btn');
         const nextBtn = document.getElementById('snap-next-btn');
         const submitBtn = document.getElementById('snap-submit-btn');
 
         if (backBtn) backBtn.style.display = (currentStep > 1) ? 'inline-block' : 'none';
-        if (nextBtn) nextBtn.style.display = (currentStep < totalSteps) ? 'inline-block' : 'none';
-        if (submitBtn) submitBtn.style.display = (currentStep === totalSteps) ? 'inline-block' : 'none';
+        if (nextBtn) nextBtn.style.display = (currentStep < totalSteps) ? 'inline-flex' : 'none';
+        if (submitBtn) submitBtn.style.display = (currentStep === totalSteps) ? 'inline-flex' : 'none';
     }
+
 
     function calculateAndRenderSnapshot() {
         const cData = countryData[formData.country] || countryData['IN'];
