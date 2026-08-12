@@ -29,6 +29,11 @@ include __DIR__ . '/components/header.php';
      ========================================================================== -->
 <?php include __DIR__ . '/components/hero-financial-assessment.php'; ?>
 
+<!-- Ad Banner Placement Directly After Hero -->
+<div class="container container-wide" style="margin-top: 1rem; margin-bottom: 1rem;">
+    <?php $ad_slot_position = 'after-hero'; include __DIR__ . '/components/ad-slot.php'; ?>
+</div>
+
 <!-- ==========================================================================
      2. FINANCIAL POSITION PREVIEW SECTION (matches reference image)
      ========================================================================== -->
