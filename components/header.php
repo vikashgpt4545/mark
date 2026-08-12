@@ -28,7 +28,7 @@ $nav = $GLOBALS['main_navigation'] ?? [];
 <header class="site-header">
     <div class="container container-wide header-inner">
         <!-- Logo -->
-        <a href="<?php echo $root; ?>index.php" class="brand-logo" title="FinWise Financial Intelligence">
+        <a href="<?php echo $root; ?>" class="brand-logo" title="FinWise Financial Intelligence">
             <div class="logo-icon">❖</div>
             <div>Fin<span class="accent">Wise</span></div>
         </a>
@@ -36,13 +36,13 @@ $nav = $GLOBALS['main_navigation'] ?? [];
         <!-- Navigation Links -->
         <nav>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="<?php echo $root; ?>finance/index.php" class="nav-link">Finance</a></li>
-                <li class="nav-item"><a href="<?php echo $root; ?>loans/index.php" class="nav-link">Loans</a></li>
-                <li class="nav-item"><a href="<?php echo $root; ?>credit-cards/index.php" class="nav-link">Credit Cards</a></li>
-                <li class="nav-item"><a href="<?php echo $root; ?>insurance/index.php" class="nav-link">Insurance</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>finance/" class="nav-link">Finance</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>loans/" class="nav-link">Loans</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>credit-cards/" class="nav-link">Credit Cards</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>insurance/" class="nav-link">Insurance</a></li>
                 <li class="nav-item"><a href="<?php echo $root; ?>finance/investing-basics.php" class="nav-link">Investing</a></li>
-                <li class="nav-item"><a href="<?php echo $root; ?>calculators/index.php" class="nav-link">Calculators</a></li>
-                <li class="nav-item"><a href="<?php echo $root; ?>articles/index.php" class="nav-link">Guides</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>calculators/" class="nav-link">Calculators</a></li>
+                <li class="nav-item"><a href="<?php echo $root; ?>articles/" class="nav-link">Guides</a></li>
                 <li class="nav-item"><a href="<?php echo $root; ?>about.php" class="nav-link">About</a></li>
             </ul>
         </nav>

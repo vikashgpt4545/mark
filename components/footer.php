@@ -19,7 +19,7 @@ $root = get_root_prefix();
         <div class="footer-grid">
             <!-- Column 1: Brand Info -->
             <div class="footer-brand">
-                <a href="<?php echo $root; ?>index.php" class="brand-logo" style="color: #ffffff;">
+                <a href="<?php echo $root; ?>" class="brand-logo" style="color: #ffffff;">
                     <div class="logo-icon">❖</div>
                     <div>Fin<span class="accent">Wise</span></div>
                 </a>

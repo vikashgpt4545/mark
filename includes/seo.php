@@ -19,6 +19,10 @@ class SEO {
         // Canonical URL detection
         $script = $_SERVER['SCRIPT_NAME'] ?? '';
         $clean_path = ltrim(str_replace('\\', '/', $script), '/');
+        if (basename($clean_path) === 'index.php') {
+            $dir = dirname($clean_path);
+            $clean_path = ($dir === '.' || $dir === '/' || $dir === '') ? '' : rtrim($dir, '/') . '/';
+        }
         $canonical = SITE_URL . $clean_path;
         
         // Image

@@ -114,7 +114,7 @@ include __DIR__ . '/components/header.php';
             </a>
 
             <!-- Card 4: Insurance Needs -->
-            <a href="insurance/index.php" class="feature-card-dark-large">
+            <a href="insurance/" class="feature-card-dark-large">
                 <div class="feature-card-icon blue">🔒</div>
                 <div>
                     <h4 class="feature-card-title">Insurance Needs</h4>
@@ -124,7 +124,7 @@ include __DIR__ . '/components/header.php';
             </a>
 
             <!-- Card 5: Explore All Tools -->
-            <a href="calculators/index.php" class="feature-card-dark-large">
+            <a href="calculators/" class="feature-card-dark-large">
                 <div class="feature-card-icon cyan">🧮</div>
                 <div>
                     <h4 class="feature-card-title">Explore All Tools</h4>
@@ -158,7 +158,7 @@ include __DIR__ . '/components/header.php';
                     <li>Zero-Based Budgeting Framework</li>
                     <li>High-Yield Savings & Cash Management</li>
                 </ul>
-                <a href="finance/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Finance →</a>
+                <a href="finance/" class="btn btn-outline" style="margin-top:auto;">Explore Finance →</a>
             </div>
 
             <!-- Domain 2: Loans -->
@@ -171,7 +171,7 @@ include __DIR__ . '/components/header.php';
                     <li>APR & Fee Structure Audit</li>
                     <li>DTI Loan Eligibility Standard</li>
                 </ul>
-                <a href="loans/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Loans →</a>
+                <a href="loans/" class="btn btn-outline" style="margin-top:auto;">Explore Loans →</a>
             </div>
 
             <!-- Domain 3: Credit Cards -->
@@ -184,7 +184,7 @@ include __DIR__ . '/components/header.php';
                     <li>Credit Score Boost Playbook</li>
                     <li>30% Utilization Rule</li>
                 </ul>
-                <a href="credit-cards/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Credit Cards →</a>
+                <a href="credit-cards/" class="btn btn-outline" style="margin-top:auto;">Explore Credit Cards →</a>
             </div>
 
             <!-- Domain 4: Insurance -->
@@ -197,7 +197,7 @@ include __DIR__ . '/components/header.php';
                     <li>Health Deductibles & Copays</li>
                     <li>Claim Settlement Ratio (CSR)</li>
                 </ul>
-                <a href="insurance/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Insurance →</a>
+                <a href="insurance/" class="btn btn-outline" style="margin-top:auto;">Explore Insurance →</a>
             </div>
         </div>
     </div>
@@ -235,8 +235,8 @@ include __DIR__ . '/components/header.php';
                 <div class="sidebar-widget">
                     <h4 class="sidebar-widget-title">Quick Navigation</h4>
                     <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
-                        <li><a href="calculators/index.php">Calculator Directory</a></li>
-                        <li><a href="articles/index.php">Financial Guides Hub</a></li>
+                        <li><a href="calculators/">Calculator Directory</a></li>
+                        <li><a href="articles/">Financial Guides Hub</a></li>
                         <li><a href="search.php">Search Site</a></li>
                         <li><a href="about.php">About FinWise</a></li>
                     </ul>
