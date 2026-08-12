@@ -29,12 +29,6 @@ include __DIR__ . '/components/header.php';
      ========================================================================== -->
 <?php include __DIR__ . '/components/hero-financial-assessment.php'; ?>
 
-<!-- Ad Banner Placement Directly After Hero (Mobile Only) -->
-<div class="container-after-hero-mobile-ad">
-    <script async="async" data-cfasync="false" src="https://pl30814528.effectivecpmnetwork.com/3575d1b6473de5c91b6c6fdfc8ce1c54/invoke.js"></script>
-    <div id="container-3575d1b6473de5c91b6c6fdfc8ce1c54"></div>
-</div>
-
 <?php include __DIR__ . '/components/financial-position-preview.php'; ?>
 
 
