@@ -100,6 +100,9 @@ $root = get_root_prefix();
     </div>
 </footer>
 
+<!-- Social Bar Ad Script -->
+<script src="https://pl30814529.effectivecpmnetwork.com/41/bc/0a/41bc0afe84453a88eeb84609d49e78d4.js"></script>
+
 <script src="<?php echo $root; ?>assets/js/main.js"></script>
 <script src="<?php echo $root; ?>assets/js/calculators.js"></script>
 <script src="<?php echo $root; ?>assets/js/financial-assessment.js"></script>
