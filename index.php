@@ -34,10 +34,12 @@ include __DIR__ . '/components/header.php';
     <?php $ad_slot_position = 'after-hero'; include __DIR__ . '/components/ad-slot.php'; ?>
 </div>
 
-<!-- ==========================================================================
-     2. FINANCIAL POSITION PREVIEW SECTION (matches reference image)
-     ========================================================================== -->
 <?php include __DIR__ . '/components/financial-position-preview.php'; ?>
+
+<!-- Ad Banner Placement After Where You Stand / Financial Position Preview Section (Mobile Only) -->
+<div class="container container-wide container-after-fpp-mobile-ad" style="margin-top: 1rem; margin-bottom: 1rem;">
+    <?php $ad_slot_position = 'after-fpp-mobile'; include __DIR__ . '/components/ad-slot.php'; ?>
+</div>
 
 
 

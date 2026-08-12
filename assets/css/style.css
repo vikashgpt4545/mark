@@ -3061,10 +3061,23 @@ h1, h2, h3, h4, h5, h6 {
     /* Priorities roadmap grid */
     .priorities-3col-grid { grid-template-columns: 1fr !important; gap: 1rem; }
 
+/* Mobile-only ad placement after Financial Position Preview (Where You Stand) */
+.container-after-fpp-mobile-ad,
+.ad-slot-after-fpp-mobile {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
     /* Hide ad banner directly after hero section on mobile devices */
     .ad-slot-after-hero,
     .container-after-hero-ad {
         display: none !important;
+    }
+
+    /* Show ad banner after Where You Stand / Financial Position Preview section on mobile */
+    .container-after-fpp-mobile-ad,
+    .ad-slot-after-fpp-mobile {
+        display: block !important;
     }
 }
 
