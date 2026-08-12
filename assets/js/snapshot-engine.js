@@ -356,7 +356,6 @@
         const widgetCard = document.getElementById('hero-snapshot-widget');
         const resultsCard = document.getElementById('hero-snapshot-results');
 
-        if (widgetCard) widgetCard.style.display = 'none';
         if (resultsCard) {
             resultsCard.style.display = 'block';
         }
