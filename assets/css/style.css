@@ -3080,6 +3080,22 @@ h1, h2, h3, h4, h5, h6 {
     display: none !important;
 }
 
+/* Ad Slot Container Styling & Collapsing when Empty */
+.ad-slot-container {
+    text-align: center;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.ad-slot-container:empty,
+.ad-slot-container > div:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 @media (max-width: 480px) {
     .container { padding-left: 0.75rem; padding-right: 0.75rem; }
     .hero-title { font-size: 1.4rem !important; }

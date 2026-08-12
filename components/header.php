@@ -22,6 +22,8 @@ $nav = $GLOBALS['main_navigation'] ?? [];
     ?>
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/style.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+    <!-- Social Bar Ad Script -->
+    <script type="text/javascript" src="//pl30814529.effectivecpmnetwork.com/41/bc/0a/41bc0afe84453a88eeb84609d49e78d4.js"></script>
 </head>
 <body>
 

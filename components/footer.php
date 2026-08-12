@@ -100,9 +100,6 @@ $root = get_root_prefix();
     </div>
 </footer>
 
-<!-- Social Bar Ad Script -->
-<script src="https://pl30814529.effectivecpmnetwork.com/41/bc/0a/41bc0afe84453a88eeb84609d49e78d4.js"></script>
-
 <!-- Direct Link Popunder Script -->
 <script>
 (function() {
