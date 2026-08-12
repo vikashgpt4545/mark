@@ -60,6 +60,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
@@ -68,6 +70,9 @@ body {
     color: var(--clr-text-main);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
 }
 
 a {
@@ -2772,7 +2777,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.2rem 0.6rem;
     margin-top: 0.4rem;
     text-align: center;
-    white-space: nowrap;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
 }
 
 /* Category bars */
@@ -2986,25 +2993,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 992px) {
-    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .container { padding-left: 1rem; padding-right: 1rem; }
     .hero-grid { grid-template-columns: 1fr !important; gap: 2rem; }
     .hero-left-col { max-width: 100%; }
     .priorities-3col-grid { grid-template-columns: 1fr 1fr !important; }
+
+    /* Header Mobile Fix: hide header search input and CTA button on mobile navbar so hamburger & logo align cleanly */
+    .header-actions .search-form-header,
+    .header-actions .btn-emerald,
+    .header-actions .btn {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-section { padding: 1.75rem 0 2rem 0 !important; }
+    .hero-section { padding: 1.5rem 0 2rem 0 !important; }
     .hero-grid { grid-template-columns: 1fr !important; }
-    .hero-title { font-size: 1.65rem !important; line-height: 1.2; }
-    .hero-subtext { font-size: 0.92rem !important; margin-bottom: 1.25rem; }
+    .hero-title { font-size: 1.6rem !important; line-height: 1.2; }
+    .hero-subtext { font-size: 0.9rem !important; margin-bottom: 1.25rem; }
     
     /* Hero trust row 2x2 on mobile */
     .hero-trust-row {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 0.75rem !important;
+        gap: 0.65rem !important;
     }
-    .hero-trust-item { padding: 0.5rem 0.6rem; }
+    .hero-trust-item { padding: 0.5rem 0.5rem; }
     .hero-trust-label { font-size: 0.72rem; }
     .hero-trust-sub { font-size: 0.62rem; }
 
@@ -3014,35 +3028,57 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Snapshot card */
     .hero-snapshot-card { border-radius: 12px; }
-    .snap-topbar { padding: 0.75rem 1rem; }
-    .snap-card-body { padding: 1.25rem 1rem; }
+    .snap-topbar { padding: 0.75rem 0.85rem; }
+    .snap-card-body { padding: 1.15rem 0.85rem; }
     .snap-step-nums { display: none !important; }
     .snap-nav-row { flex-direction: column-reverse; gap: 0.6rem; }
     .snap-btn-continue, .snap-btn-submit { width: 100%; text-align: center; }
     .snap-btn-back { width: 100%; text-align: center; margin-bottom: 0.25rem; }
 
-    /* Financial Position Preview */
-    .fpp-section { padding: 1.5rem 0; }
+    /* Financial Position Preview Mobile Layout */
+    .fpp-section { padding: 1.5rem 0; overflow-x: hidden; }
     .fpp-top-grid { grid-template-columns: 1fr !important; gap: 1rem; }
-    .fpp-panel-right { grid-column: span 1 !important; flex-direction: column !important; }
+    .fpp-panel { padding: 1.15rem !important; max-width: 100% !important; overflow: hidden !important; }
+    .fpp-panel-right { grid-column: span 1 !important; flex-direction: column !important; gap: 1.25rem !important; }
     .fpp-tools-row { grid-template-columns: 1fr 1fr !important; }
-    .fpp-score-layout { flex-direction: column !align-items: center; }
-    .fpp-gauge-block { margin-bottom: 1rem; }
-    .fpp-bars-block { width: 100%; }
+
+    /* Score Panel Layout Fix: stack gauge vertically above bars on mobile */
+    .fpp-score-layout {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .fpp-gauge-block {
+        margin-bottom: 1.25rem !important;
+        width: 100% !important;
+    }
+    .fpp-bars-block {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
 
     /* Priorities roadmap grid */
     .priorities-3col-grid { grid-template-columns: 1fr !important; gap: 1rem; }
 }
 
 @media (max-width: 480px) {
-    .container { padding-left: 0.85rem; padding-right: 0.85rem; }
-    .hero-title { font-size: 1.45rem !important; }
+    .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .hero-title { font-size: 1.4rem !important; }
     .fpp-tools-row { grid-template-columns: 1fr !important; }
-    .fpp-people-grid { grid-template-columns: 1fr 1fr !important; gap: 0.4rem; }
-    .fpp-people-stat { padding: 0.5rem; }
-    .fpp-people-pct { font-size: 1.15rem; }
-    .fpp-dist-bar { font-size: 0.62rem; height: 26px; line-height: 26px; }
-    .fpp-dist-labels span { font-size: 0.6rem; }
-    .fpp-bar-label { width: 90px; font-size: 0.7rem; }
+    .fpp-tool-card { padding: 1rem 0.85rem; }
+
+    /* People Like You grid & Global Distribution bar scaling */
+    .fpp-people-grid { grid-template-columns: 1fr 1fr !important; gap: 0.4rem !important; }
+    .fpp-people-stat { padding: 0.5rem 0.25rem !important; }
+    .fpp-people-pct { font-size: 1.1rem !important; }
+    .fpp-people-lbl { font-size: 0.65rem !important; }
+
+    .fpp-dist-bar { font-size: 0.58rem !important; height: 26px !important; line-height: 26px !important; }
+    .fpp-dist-seg { padding: 0 2px !important; }
+    .fpp-dist-labels span { font-size: 0.55rem !important; }
+    
+    .fpp-bar-label { width: 85px !important; font-size: 0.68rem !important; }
+    .fpp-bar-pct { font-size: 0.68rem !important; width: 24px !important; }
 }
 
