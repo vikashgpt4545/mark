@@ -25,56 +25,87 @@ include __DIR__ . '/components/header.php';
 ?>
 
 <!-- ==========================================================================
-     MAIN HERO EXPERIENCE (Global Financial Assessment)
+     1. PREMIUM HERO EXPERIENCE (80-100vh First Viewport)
      ========================================================================== -->
 <?php include __DIR__ . '/components/hero-financial-assessment.php'; ?>
 
 <!-- ==========================================================================
-     UNIFIED FINANCIAL POSITION DASHBOARD (Immediately Below Hero)
+     2. FINANCIAL POSITION DASHBOARD PREVIEW
      ========================================================================== -->
-<section id="hero-snapshot-results" class="section section-dark-dashboard" style="padding: 3rem 0;">
+<section id="hero-snapshot-results" class="section section-dark-dashboard" style="padding: 3.5rem 0 2.5rem 0;">
     <div class="container container-wide">
-        <!-- Unified 3-Column Dark Glassmorphism Dashboard Card -->
+        <!-- Unified 3-Column Glassmorphism Dashboard Card -->
         <?php include __DIR__ . '/components/financial-comparison.php'; ?>
 
-        <!-- 5 Feature Cards Grid -->
+        <!-- Methodology & Disclaimer Notice -->
+        <?php include __DIR__ . '/components/benchmark-message.php'; ?>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     3. TOP FINANCIAL PRIORITIES
+     ========================================================================== -->
+<section class="section section-dark-dashboard" style="padding: 1rem 0 3.5rem 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container container-wide">
+        <div style="text-align:center; margin-bottom:1.5rem;">
+            <span class="section-subtitle">Personalized Action Plan</span>
+            <h3 style="font-size:1.65rem; color:#fff; margin-top:0.25rem;">Your Top 3 Financial Priorities</h3>
+        </div>
+        <div id="dash-priorities-list" style="max-width:860px; margin:0 auto;">
+            <div class="priority-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); padding:1.5rem; border-radius:var(--radius-md); text-align:center; color:#94a3b8;">
+                Complete your financial snapshot in the hero above to generate your customized top 3 priority roadmap.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     4. FINANCIAL TOOLS SUITE (5 Cards Row)
+     ========================================================================== -->
+<section id="interactive-tools-suite" class="section section-dark-dashboard" style="padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container container-wide">
+        <div style="text-align:center; margin-bottom:2rem;">
+            <span class="section-subtitle">Interactive Suite</span>
+            <h3 style="font-size:1.65rem; color:#fff; margin-top:0.25rem;">Essential Financial Calculators & Analysis Tools</h3>
+        </div>
+
         <div class="feature-cards-5col-grid">
-            <!-- Card 1: Loan Affordability Calculator -->
+            <!-- Card 1: Loan Affordability -->
             <a href="calculators/loan-affordability.php" class="feature-card-dark">
                 <div class="feature-card-icon violet">💳</div>
                 <div>
-                    <h4 class="feature-card-title">Loan Affordability Calculator</h4>
-                    <p class="feature-card-desc">Check your loan eligibility in seconds</p>
+                    <h4 class="feature-card-title">Loan Affordability</h4>
+                    <p class="feature-card-desc">Check how a potential loan affects your finances.</p>
                 </div>
                 <span class="feature-card-arrow">→</span>
             </a>
 
-            <!-- Card 2: Investment Growth Calculator -->
+            <!-- Card 2: Investment Growth -->
             <a href="calculators/compound-interest.php" class="feature-card-dark">
                 <div class="feature-card-icon green">📈</div>
                 <div>
-                    <h4 class="feature-card-title">Investment Growth Calculator</h4>
-                    <p class="feature-card-desc">See your money grow over time</p>
+                    <h4 class="feature-card-title">Investment Growth</h4>
+                    <p class="feature-card-desc">Explore how savings could grow over time.</p>
                 </div>
                 <span class="feature-card-arrow">→</span>
             </a>
 
-            <!-- Card 3: Credit Score Analyzer -->
+            <!-- Card 3: Credit Position -->
             <a href="credit-cards/credit-score.php" class="feature-card-dark">
                 <div class="feature-card-icon amber">🛡️</div>
                 <div>
-                    <h4 class="feature-card-title">Credit Score Analyzer</h4>
-                    <p class="feature-card-desc">Understand and improve your credit score</p>
+                    <h4 class="feature-card-title">Credit Position</h4>
+                    <p class="feature-card-desc">Understand credit-related financial indicators.</p>
                 </div>
                 <span class="feature-card-arrow">→</span>
             </a>
 
-            <!-- Card 4: Insurance Needs Check -->
+            <!-- Card 4: Insurance Needs -->
             <a href="insurance/index.php" class="feature-card-dark">
                 <div class="feature-card-icon blue">🔒</div>
                 <div>
-                    <h4 class="feature-card-title">Insurance Needs Check</h4>
-                    <p class="feature-card-desc">Find the right coverage for your life</p>
+                    <h4 class="feature-card-title">Insurance Needs</h4>
+                    <p class="feature-card-desc">Explore financial protection concepts.</p>
                 </div>
                 <span class="feature-card-arrow">→</span>
             </a>
@@ -84,32 +115,16 @@ include __DIR__ . '/components/header.php';
                 <div class="feature-card-icon cyan">🧮</div>
                 <div>
                     <h4 class="feature-card-title">Explore All Tools</h4>
-                    <p class="feature-card-desc">20+ powerful financial tools and calculators</p>
+                    <p class="feature-card-desc">Access the complete calculator library.</p>
                 </div>
                 <span class="feature-card-arrow">→</span>
             </a>
         </div>
-
-        <!-- Priorities Section -->
-        <div style="margin-top:3rem;">
-            <div style="text-align:center; margin-bottom:1.5rem;">
-                <span class="section-subtitle">Personalized Action Roadmap</span>
-                <h3 style="font-size:1.5rem; color:#fff; margin-top:0.25rem;">Your Top 3 Priorities</h3>
-            </div>
-            <div id="dash-priorities-list" style="max-width:820px; margin:0 auto;">
-                <div class="priority-card" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); padding:1.5rem; border-radius:var(--radius-md); text-align:center; color:#94a3b8;">
-                    Complete your financial snapshot in the hero above to generate your customized top 3 priority roadmap.
-                </div>
-            </div>
-        </div>
-
-        <!-- Methodology & Disclaimer -->
-        <?php include __DIR__ . '/components/benchmark-message.php'; ?>
     </div>
 </section>
 
 <!-- ==========================================================================
-     CORE 4 NICHES CONNECTIVITY
+     5. FOUR CORE FINANCIAL DOMAINS
      ========================================================================== -->
 <section class="section section-alt">
     <div class="container container-wide">
@@ -120,10 +135,11 @@ include __DIR__ . '/components/header.php';
         </div>
 
         <div class="niche-grid">
+            <!-- Domain 1: Finance -->
             <div class="niche-card">
                 <div class="niche-icon finance">💰</div>
                 <h3 class="niche-title">Finance</h3>
-                <p class="niche-desc">Master cash flow, monthly 50/30/20 budgeting, tax optimization, and liquid savings strategies.</p>
+                <p class="niche-desc">Budgeting, saving, investing and financial planning.</p>
                 <ul class="niche-list">
                     <li>Personal Finance Fundamentals</li>
                     <li>Zero-Based Budgeting</li>
@@ -132,10 +148,11 @@ include __DIR__ . '/components/header.php';
                 <a href="finance/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Finance →</a>
             </div>
 
+            <!-- Domain 2: Loans -->
             <div class="niche-card">
                 <div class="niche-icon loans">🏦</div>
                 <h3 class="niche-title">Loans</h3>
-                <p class="niche-desc">Deconstruct personal, mortgage, auto, and business borrowing costs with precise EMI models.</p>
+                <p class="niche-desc">Loan types, affordability, EMI, interest and repayment.</p>
                 <ul class="niche-list">
                     <li>Reducing Rate Amortization</li>
                     <li>APR & Hidden Fee Audit</li>
@@ -144,10 +161,11 @@ include __DIR__ . '/components/header.php';
                 <a href="loans/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Loans →</a>
             </div>
 
+            <!-- Domain 3: Credit Cards -->
             <div class="niche-card">
                 <div class="niche-icon cards">💳</div>
                 <h3 class="niche-title">Credit Cards</h3>
-                <p class="niche-desc">Optimize rewards, cashback optimization, FICO score mechanics, and interest payoff tactics.</p>
+                <p class="niche-desc">Credit cards, rewards, fees, interest and credit management.</p>
                 <ul class="niche-list">
                     <li>Cashback vs Travel Miles</li>
                     <li>FICO Score 100+ Point Boost</li>
@@ -156,10 +174,11 @@ include __DIR__ . '/components/header.php';
                 <a href="credit-cards/index.php" class="btn btn-outline" style="margin-top:auto;">Explore Credit Cards →</a>
             </div>
 
+            <!-- Domain 4: Insurance -->
             <div class="niche-card">
                 <div class="niche-icon insurance">🛡️</div>
                 <h3 class="niche-title">Insurance</h3>
-                <p class="niche-desc">Protect your family and assets with term life, health deductible, and auto policy analysis.</p>
+                <p class="niche-desc">Life, health, vehicle, home and travel insurance.</p>
                 <ul class="niche-list">
                     <li>Term vs Whole Life</li>
                     <li>Health Deductibles & Out-of-Pocket</li>
@@ -172,7 +191,7 @@ include __DIR__ . '/components/header.php';
 </section>
 
 <!-- ==========================================================================
-     EDUCATIONAL CONTENT & 3,000 WORDS SEO STRUCTURE
+     6. LONG-FORM EDUCATIONAL SEO CONTENT & FAQ (Lower Page Position)
      ========================================================================== -->
 <section class="section">
     <div class="container container-wide">
