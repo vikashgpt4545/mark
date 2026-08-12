@@ -77,11 +77,6 @@ include __DIR__ . '/components/header.php';
     </div>
 </section>
 
-<!-- Ad Banner Placement -->
-<div class="container container-wide">
-    <?php $ad_slot_position = 'homepage-banner'; include __DIR__ . '/components/ad-slot.php'; ?>
-</div>
-
 <!-- ==========================================================================
      4. ESSENTIAL FINANCIAL TOOLS SUITE (5 Product Cards)
      ========================================================================== -->
